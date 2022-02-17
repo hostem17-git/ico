@@ -11,7 +11,7 @@ function App() {
       {/* Header */}
       <Header />
       {/* Main */}
-      <Main accountAddress="" />
+      <Main accountAddress="" currentPhaseNumber="2" unitCost="1BNB" unit="3000 Meld" current="2500000" target="12500000" sale="1,233,943.453689" totalSale="3,733,943.453689" />
       {/* Footer */}
       <Footer />
     </div >
