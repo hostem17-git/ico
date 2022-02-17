@@ -14,6 +14,7 @@ export default Header;
 
 const HeaderContainer = styled.div`
     background-color:black;
+    width:100%;
     display:flex;
     justify-content:center;
     padding:30px;

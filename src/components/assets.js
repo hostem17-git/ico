@@ -1,9 +1,9 @@
 import logoIcoPad from "../assets/images/logoIcoPad.png"
-import bscscan from "../assets/images/bscscan.png"
-import certik from "../assets/images/certik.png"
-import coingecko from "../assets/images/coingecko.png"
-import coinmarketcap from "../assets/images/coinmarketcap.png"
-import interfi from "../assets/images/interfi.png"
+import bscscan from "../assets/images/bscscan2.png"
+import certik from "../assets/images/certik2.png"
+import coingecko from "../assets/images/coingecko2.png"
+import coinmarketcap from "../assets/images/coinmarketcap2.png"
+import interfi from "../assets/images/interfi2.png"
 
 
 export { logoIcoPad, bscscan, certik, coingecko, coinmarketcap, interfi };
