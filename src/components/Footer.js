@@ -40,6 +40,7 @@ export default Footer
 
 const FooterConainer = styled.div`
     display:flex;
+    width:100%;
     flex-direction: column;
     background-color: black;
     justify-content:center;
