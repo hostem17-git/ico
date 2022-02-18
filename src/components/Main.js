@@ -1,25 +1,25 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components';
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
 import { Button, Checkbox } from '@mui/material';
 
 
 function Main({ currentPhaseNumber, accountAddress, unitCost, unit, current, target, sale, totalSale, max }) {
-    console.log((current / target))
+    console.log((current / target));
 
     const [buyAmount, setBuyAmount] = useState(0.00);
     const [meldAmount, setMeldAmount] = useState(0.00);
     const [referal, setReferal] = useState(false);
     const [referalAddress, setReferalAddress] = useState("")
 
+    useEffect(() => {
+        setMeldAmount((parseFloat(unit) * parseFloat(buyAmount)) / (parseFloat(unitCost)))
+    }, [buyAmount, unit, unitCost])
 
-
-    //  TODO: Handle Input
     const handleInput = (e) => {
         setBuyAmount(e.target.value);
         console.log(typeof (unit), typeof (buyAmount))
         console.log(parseFloat(unit) * parseFloat(buyAmount) / parseFloat(unitCost))
-        setMeldAmount(parseFloat(unit) * parseFloat(buyAmount))
 
     };
 
@@ -72,7 +72,7 @@ function Main({ currentPhaseNumber, accountAddress, unitCost, unit, current, tar
                                 <p>max</p>
                             </LabelContainer>
                             <InputContainer>
-                                <input type="number" value={buyAmount} placeholder="0.00" onChange={handleInput} /><p>BNB</p>
+                                <input type="number" value={buyAmount} placeholder="0.00" step={1} onChange={handleInput} /><p>BNB</p>
                             </InputContainer>
                         </Border>
                         <Border>
@@ -81,7 +81,7 @@ function Main({ currentPhaseNumber, accountAddress, unitCost, unit, current, tar
 
                             </LabelContainer>
                             <InputContainer>
-                                <input type="number" value={buyAmount} placeholder="0.00" /><p>MELD</p>
+                                <input type="number" disabled value={meldAmount} placeholder="0.00" /><p>MELD</p>
                             </InputContainer>
                         </Border>
                     </TransactionContainer>
@@ -111,7 +111,6 @@ export default Main
 
 const MainContainer = styled.div`  
     width:100%;
-    
     background: rgb(0,0,0);
     background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(9,9,121,1) 35%, rgba(214,0,81,1) 100%);
     display:flex;
@@ -222,6 +221,7 @@ const ProgressBarContainer = styled.div`
 
     
 `;
+
 const CompletedProgress = styled.div`
     display:inline-block;
     width:50%;
