@@ -121,8 +121,9 @@ const MainButtonContainer = styled.div`
     overflow: hidden;
     padding:10px;
     border-radius:100px;
+    cursor: pointer;
     :hover{
-        background-color:palevioletred;
+        box-shadow:0px 0px 15px #fff; 
     }
 
     transition: all .2s linear;
