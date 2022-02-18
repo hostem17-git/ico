@@ -5,7 +5,6 @@ import { Button, Checkbox } from '@mui/material';
 
 
 function Main({ currentPhaseNumber, accountAddress, unitCost, unit, current, target, sale, totalSale, max }) {
-    console.log((current / target));
 
     const [buyAmount, setBuyAmount] = useState(0.00);
     const [meldAmount, setMeldAmount] = useState(0.00);
@@ -15,14 +14,6 @@ function Main({ currentPhaseNumber, accountAddress, unitCost, unit, current, tar
     useEffect(() => {
         setMeldAmount((parseFloat(unit) * parseFloat(buyAmount)) / (parseFloat(unitCost)))
     }, [buyAmount, unit, unitCost])
-
-    const handleInput = (e) => {
-        setBuyAmount(e.target.value);
-        console.log(typeof (unit), typeof (buyAmount))
-        console.log(parseFloat(unit) * parseFloat(buyAmount) / parseFloat(unitCost))
-
-    };
-
 
     const handleCheckBox = (e) => {
         setReferal(e.target.checked);
@@ -44,12 +35,11 @@ function Main({ currentPhaseNumber, accountAddress, unitCost, unit, current, tar
 
                     <ProgressBarContainer>
                         <SliderContainer>
-                            <CompletedProgress style={{ width: `${(current / target)}*100% !important` }} ></CompletedProgress>
+                            <CompletedProgress style={{ width: `${(parseFloat(current) / parseFloat(target) * 100)}%` }} ></CompletedProgress>
                             <TotalProgress></TotalProgress>
                         </SliderContainer>
 
                         <ProgressRange>
-                            TODO:Dynamic Width
                             <h4>{current}$Meld</h4>
                             <h4>{target}$Meld</h4>
                         </ProgressRange>
@@ -69,10 +59,10 @@ function Main({ currentPhaseNumber, accountAddress, unitCost, unit, current, tar
                         <Border>
                             <LabelContainer>
                                 <h6>Buy</h6>
-                                <p>max</p>
+                                <p onClick={() => { setBuyAmount(parseFloat(max)) }}>max</p>
                             </LabelContainer>
                             <InputContainer>
-                                <input type="number" value={buyAmount} placeholder="0.00" step={1} onChange={handleInput} /><p>BNB</p>
+                                <input type="number" value={buyAmount} placeholder="0.00" step={1} onChange={(e) => { setBuyAmount(e.target.value) }} /><p>BNB</p>
                             </InputContainer>
                         </Border>
                         <Border>
@@ -224,7 +214,7 @@ const ProgressBarContainer = styled.div`
 
 const CompletedProgress = styled.div`
     display:inline-block;
-    width:50%;
+    /* width:50%; */
     height:25px;
     position:absolute;
     z-index:999;
@@ -286,6 +276,7 @@ const LabelContainer = styled.div`
         border-radius:25px;
         background-color:#2777f8;
         padding:3px 5px;
+        cursor: pointer;
     }
 `;
 const InputContainer = styled.div`

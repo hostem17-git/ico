@@ -5,12 +5,11 @@ import styled from 'styled-components'
 
 
 function ExternalLinkCollection({ title, items }) {
-    console.log(items)
     return (
         <ExternalLinkListContainer>
             <h1>{title}</h1>
             <ExternalLinkList>
-                {items.map((item) => { return (<h4>{item}</h4>) })}
+                {items.map((item) => { return (<h4 key={item}>{item}</h4>) })}
             </ExternalLinkList>
         </ExternalLinkListContainer>
     )
