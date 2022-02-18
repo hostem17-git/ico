@@ -71,5 +71,5 @@ const ExternalLinksContainer = styled.div`
     display:flex;
     flex-wrap: wrap;
     justify-content:center;
-    padding:50px;
+    padding:50px 0;
 `;

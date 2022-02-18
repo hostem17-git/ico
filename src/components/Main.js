@@ -40,7 +40,7 @@ function Main({ currentPhaseNumber, accountAddress, unitCost, unit, current, tar
                         </SliderContainer>
 
                         <ProgressRange>
-                            <h4>{current}$Meld</h4>
+                            <h4>{`${parseFloat(current).toLocaleString("en")}`}$Meld</h4>
                             <h4>{target}$Meld</h4>
                         </ProgressRange>
                     </ProgressBarContainer>
@@ -100,12 +100,12 @@ function Main({ currentPhaseNumber, accountAddress, unitCost, unit, current, tar
 export default Main
 
 const MainContainer = styled.div`  
-    width:100%;
+    width:100%;;
     background: rgb(0,0,0);
     background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(9,9,121,1) 35%, rgba(214,0,81,1) 100%);
     display:flex;
     flex-direction:column;
-    padding:40px;
+    padding:40px 0;
     align-items:center;
     *{
         /* \\ TODO:  correct this*/

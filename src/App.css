@@ -3,3 +3,7 @@
   overflow-x: hidden;
   /* border: 1px solid black; */
 }
+
+body {
+  width: 100vw;
+}

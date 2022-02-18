@@ -17,7 +17,7 @@ const HeaderContainer = styled.div`
     width:100%;
     display:flex;
     justify-content:center;
-    padding:30px;
+    padding:30px 0;
     >img{
         object-fit:contain;
         height:12vh;
