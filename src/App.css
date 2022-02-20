@@ -6,8 +6,8 @@
 
 body {
   width: 100vw;
-  background: rgb(255, 255, 255);
-  background: radial-gradient(
+  background: whitesmoke;
+  /* background: radial-gradient(
     circle,
     rgba(255, 255, 255, 1) 55%,
     rgba(0, 219, 118, 0.7682423311121324) 100%
@@ -31,5 +31,5 @@ body {
       rgba(0, 219, 118, 0.7682423311121324) 100%
     );
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#00db76",GradientType=1);
-  }
+  } */
 }

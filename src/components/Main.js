@@ -29,7 +29,7 @@ function Main({ currentPhaseNumber, accountAddress, unitCost, unit, current, tar
                 <h3>{(accountAddress === "") ? "Connect Wallet" : `${accountAddress}`}</h3>
             </Button>
 
-            <Referral accountAddress={accountAddress} />
+            {/* <Referral accountAddress={accountAddress} /> */}
             {/* ######################################################################################### */}
             <MainInfoContainer>
                 <MainInfo>
@@ -66,7 +66,7 @@ function Main({ currentPhaseNumber, accountAddress, unitCost, unit, current, tar
                                 <p onClick={() => { setBuyAmount(parseFloat(max)) }}>max</p>
                             </LabelContainer>
                             <InputContainer>
-                                <input type="number" value={buyAmount} placeholder="0.00" step={1} onChange={(e) => { setBuyAmount(e.target.value) }} /><p>BNB</p>
+                                <input type="number" value={buyAmount} placeholder="0.00" step={1} onChange={(e) => { setBuyAmount(e.target.value) }} /><h4>BNB</h4>
                             </InputContainer>
                         </Border>
                         <Border>
@@ -75,7 +75,8 @@ function Main({ currentPhaseNumber, accountAddress, unitCost, unit, current, tar
 
                             </LabelContainer>
                             <InputContainer>
-                                <input type="number" disabled value={meldAmount} placeholder="0.00" /><p>MELD</p>
+                                <input type="number" disabled value={meldAmount} placeholder="0.00" />
+                                <h4>MELD</h4>
                             </InputContainer>
                         </Border>
                     </TransactionContainer>
@@ -145,7 +146,7 @@ const MainInfoContainer = styled.div`
 `;
 
 const MainInfo = styled.div`
-    background-color:#93FFD8;
+    background-color:white;
 
     /* color:white; */
     border:2px solid black;
@@ -155,7 +156,7 @@ const MainInfo = styled.div`
     >h1{
         text-align: center;
     >span{
-        color:#ff4dab;
+        color:#64dd17;
     }
     };
     >h2>span{
@@ -171,7 +172,7 @@ const MainInfo = styled.div`
 `;
 
 const MainTransactionContainer = styled.div`
-    background-color: #474866;
+    background-color:#48DCA8;
     color:white;
     border-radius:50px;
     padding:40px;
@@ -181,11 +182,12 @@ const MainTransactionContainer = styled.div`
     }
 
     >input{  
-        color:#00db76;
+        /* color:#00db76; */
+        font-size: 18px;
         outline:none;
         border:none;
         padding:10px 25px;
-        background-color: black;
+        background-color: whitesmoke;
         border-radius: 25px;
         
     }
@@ -214,21 +216,19 @@ const ButtonContainer = styled.div`
 
 
 const ProgressBarContainer = styled.div`
-
-    position:relative;
-
-    
+    position:relative;    
 `;
 
 const CompletedProgress = styled.div`
     display:inline-block;
-    /* width:50%; */
     height:25px;
     position:absolute;
     z-index:999;
     background-color:#548CFF;
     border-radius:25px;
+    border:1px solid #548CFF;
 `;
+
 const TotalProgress = styled.div`
     display:inline-block;
     width:98%;
@@ -237,7 +237,10 @@ const TotalProgress = styled.div`
     z-index:99;
     background-color:white;
     border-radius:25px;
+    border:1px solid black;
     `;
+
+
 const ProgressRange = styled.div`
     display:flex;
     justify-content:space-between;
@@ -248,11 +251,11 @@ const SaleInfo = styled.div`
     text-align:center;
 
     >h1 >span{
-        color:#ff4dab;
+        color:#64dd17;
     }
 
     >h3 >span{
-        color:#ff4dab;
+        color:#64dd17;
     }
 
     >Button{
@@ -293,21 +296,25 @@ const InputContainer = styled.div`
     display:flex;
     align-items:center;
     justify-content: space-between;
+    
     >input{
-        flex:.8;
-        color:#00db76;
+        flex:.9;
+        /* color:#00db76; */
         outline:none;
         border:none;
         font-size: 18px;
         padding:10px 25px;
-        background-color: black;
+        background-color: whitesmoke;
         border-radius: 25px;
     }
     >input::-webkit-outer-spin-button,
->input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
+    >input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    >h4{
+        font-size: 20px;
+    }
       
 `;
 
