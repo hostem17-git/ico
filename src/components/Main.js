@@ -28,8 +28,8 @@ function Main({ currentPhaseNumber, accountAddress, unitCost, unit, current, tar
                 <h3>{(accountAddress === "") ? "Connect Wallet" : `${accountAddress}`}</h3>
             </MainButtonContainer>
 
-            <Referral accountAddress={accountAddress} />
-
+            {/* <Referral accountAddress={accountAddress} /> */}
+            {/* ######################################################################################### */}
             <MainInfoContainer>
                 <MainInfo>
                     <h1>Launchpad <span>Phase {currentPhaseNumber}/5</span> is Live</h1>
@@ -104,8 +104,8 @@ export default Main
 
 const MainContainer = styled.div`  
     width:100%;;
-    background: rgb(0,0,0);
-    background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(9,9,121,1) 35%, rgba(214,0,81,1) 100%);
+    /* background: rgb(0,0,0); */
+    /* background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(9,9,121,1) 35%, rgba(214,0,81,1) 100%); */
     display:flex;
     flex-direction:column;
     padding:40px 0;
