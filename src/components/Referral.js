@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 function Referral({ accountAddress }) {
     const [userShare, setUserShare] = useState(250);
-    const [partnerShare, setPartnerShare] = useState(0);
+    const [partnerShare, setPartnerShare] = useState(250);
 
     const handleSlider = (e) => {
         setUserShare(e.target.value);
@@ -37,7 +37,8 @@ function Referral({ accountAddress }) {
 export default Referral
 
 const ReferralContainer = styled.div`
-    border:1px solid green;
+    border:2px solid black;
+    box-shadow:0 0 15px rgba(0,0,0,.6);
     border-radius: 25px;
     padding:20px;
     display:flex;
@@ -47,7 +48,8 @@ const ReferralContainer = styled.div`
     }
 
     >Button{
-        background-color: green;
+        color:white;
+        background-color: Black;
         border-radius:50px;
         align-self: center;
         :focus{
@@ -70,7 +72,6 @@ const SliderInfo = styled.div`
 const Slider = styled.div`
     >input{
         width:100%;
-        
         opacity:.7;
         -webkit-transition: .2s;
         transition: opacity .2s;    
