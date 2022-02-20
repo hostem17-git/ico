@@ -29,8 +29,6 @@ function Referral({ accountAddress }) {
                 </PartnerShareContainer>
 
             </SliderInfo>
-
-
             <Button>Generate</Button>
         </ReferralContainer>
     )

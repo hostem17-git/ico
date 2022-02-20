@@ -23,10 +23,11 @@ function Main({ currentPhaseNumber, accountAddress, unitCost, unit, current, tar
     return (
         <MainContainer>
 
-            <MainButtonContainer>
+
+            <Button>
                 <AccountBalanceWalletIcon />
                 <h3>{(accountAddress === "") ? "Connect Wallet" : `${accountAddress}`}</h3>
-            </MainButtonContainer>
+            </Button>
 
             {/* <Referral accountAddress={accountAddress} /> */}
             {/* ######################################################################################### */}
@@ -103,7 +104,8 @@ function Main({ currentPhaseNumber, accountAddress, unitCost, unit, current, tar
 export default Main
 
 const MainContainer = styled.div`  
-    width:100%;;
+    width:100%;
+    
     /* background: rgb(0,0,0); */
     /* background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(9,9,121,1) 35%, rgba(214,0,81,1) 100%); */
     display:flex;
@@ -114,26 +116,20 @@ const MainContainer = styled.div`
         /* \\ TODO:  correct this*/
         margin:20px 0;
     }
-`;
+    >Button{
+        background-color:black;
+        border-radius:50px;
+        color:white;
+        *{
+            padding:2px;
+        }
 
-const MainButtonContainer = styled.div`
-    display:flex;
-    align-items:center;
-    background-color:white;
-    margin:0;
-    overflow: hidden;
-    padding:10px;
-    border-radius:100px;
-    cursor: pointer;
-    :hover{
-        box-shadow:0px 0px 15px #fff; 
-    }
-
-    transition: all .2s linear;
-    >h3>.MuiSvgIcon-root{
-        background-color:red;
+        :hover{
+            background-color:#3772ff;
+        }
     }
 `;
+
 
 const MainInfoContainer = styled.div`
     width:100%;
@@ -149,8 +145,11 @@ const MainInfoContainer = styled.div`
 `;
 
 const MainInfo = styled.div`
-    background-color:#0a101f;
-    color:white;
+    background-color:#93FFD8;
+
+    /* color:white; */
+    border:2px solid black;
+    box-shadow: 0 0 10px rgba(0,0,0,.6);
     border-radius:50px;
     padding:40px;
     >h1{
@@ -160,11 +159,14 @@ const MainInfo = styled.div`
     }
     };
     >h2>span{
-        color:#00db76;
+        color:#548CFF;
     }
     
     >h3{
-        color:#00db76;;
+        color:#548CFF;;
+    }
+    @media (max-width:700px) {
+        background-color:transparent;    
     }
 `;
 
@@ -178,8 +180,7 @@ const MainTransactionContainer = styled.div`
         margin:5px;
     }
 
-    >input{
-        
+    >input{  
         color:#00db76;
         outline:none;
         border:none;
@@ -225,7 +226,7 @@ const CompletedProgress = styled.div`
     height:25px;
     position:absolute;
     z-index:999;
-    background-color:#00db76;
+    background-color:#548CFF;
     border-radius:25px;
 `;
 const TotalProgress = styled.div`
@@ -255,13 +256,13 @@ const SaleInfo = styled.div`
     }
 
     >Button{
-        background-color:#ff4dab;
+        background-color:#548CFF;
         color:white;
         border-radius:25px;
         padding:10px;
         
         :hover{
-            background-color:#ff8bc8;
+            background-color:#000;
         }
     }
 `;

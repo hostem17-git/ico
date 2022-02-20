@@ -6,4 +6,30 @@
 
 body {
   width: 100vw;
+  background: rgb(255, 255, 255);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 55%,
+    rgba(0, 219, 118, 0.7682423311121324) 100%
+  );
+
+  @media (max-width: 700px) {
+    background: rgb(255, 255, 255);
+    background: -moz-radial-gradient(
+      circle,
+      rgba(255, 255, 255, 1) 95%,
+      rgba(0, 219, 118, 0.7682423311121324) 100%
+    );
+    background: -webkit-radial-gradient(
+      circle,
+      rgba(255, 255, 255, 1) 95%,
+      rgba(0, 219, 118, 0.7682423311121324) 100%
+    );
+    background: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 1) 95%,
+      rgba(0, 219, 118, 0.7682423311121324) 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#00db76",GradientType=1);
+  }
 }
