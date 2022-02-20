@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import styled from 'styled-components';
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
 import { Button, Checkbox } from '@mui/material';
+import Referral from './Referral';
 
 
 function Main({ currentPhaseNumber, accountAddress, unitCost, unit, current, target, sale, totalSale, max }) {
@@ -26,6 +27,8 @@ function Main({ currentPhaseNumber, accountAddress, unitCost, unit, current, tar
                 <AccountBalanceWalletIcon />
                 <h3>{(accountAddress === "") ? "Connect Wallet" : `${accountAddress}`}</h3>
             </MainButtonContainer>
+
+            <Referral accountAddress={accountAddress} />
 
             <MainInfoContainer>
                 <MainInfo>
@@ -58,7 +61,7 @@ function Main({ currentPhaseNumber, accountAddress, unitCost, unit, current, tar
                     <TransactionContainer>
                         <Border>
                             <LabelContainer>
-                                <h6>Buy</h6>
+                                <h4>Buy</h4>
                                 <p onClick={() => { setBuyAmount(parseFloat(max)) }}>max</p>
                             </LabelContainer>
                             <InputContainer>
@@ -67,7 +70,7 @@ function Main({ currentPhaseNumber, accountAddress, unitCost, unit, current, tar
                         </Border>
                         <Border>
                             <LabelContainer>
-                                <h6>Get</h6>
+                                <h4>Get</h4>
 
                             </LabelContainer>
                             <InputContainer>
@@ -109,7 +112,7 @@ const MainContainer = styled.div`
     align-items:center;
     *{
         /* \\ TODO:  correct this*/
-        margin:20px;
+        margin:20px 0;
     }
 `;
 
@@ -151,13 +154,15 @@ const MainInfo = styled.div`
     border-radius:50px;
     padding:40px;
     >h1{
-        text-align: center};
+        text-align: center;
+    >span{
+        color:#ff4dab;
+    }
+    };
     >h2>span{
         color:#00db76;
     }
-    >h2>span{
-        color:#ff4dab;
-    }
+    
     >h3{
         color:#00db76;;
     }
@@ -181,6 +186,7 @@ const MainTransactionContainer = styled.div`
         padding:10px 25px;
         background-color: black;
         border-radius: 25px;
+        
     }
 
     >input::-webkit-outer-spin-button,input::-webkit-inner-spin-button {
@@ -272,11 +278,13 @@ const LabelContainer = styled.div`
     display:flex;
     align-items:center;
     justify-content: space-between;
-
+    font-size: 24px;;
     p{
         border-radius:25px;
         background-color:#2777f8;
-        padding:3px 5px;
+        padding:5px 10px;
+        padding-top:4px;
+        /* padding:5px; */
         cursor: pointer;
     }
 `;
@@ -289,6 +297,7 @@ const InputContainer = styled.div`
         color:#00db76;
         outline:none;
         border:none;
+        font-size: 18px;
         padding:10px 25px;
         background-color: black;
         border-radius: 25px;
