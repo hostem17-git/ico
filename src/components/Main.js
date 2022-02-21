@@ -293,6 +293,9 @@ const MainTransactionContainer = styled.div`
      margin: 0;
      }
 
+     @media (max-width:1000px) {
+         margin-top: 20px;
+     }
     
 `;
 
