@@ -44,15 +44,15 @@ function Main({ currentPhaseNumber, accountAddress, unitCost, unit, current, tar
                         </SliderContainer>
 
                         <ProgressRange>
-                            <h4>{`${parseFloat(current).toLocaleString("en")}`}$Meld</h4>
-                            <h4>{target}$Meld</h4>
+                            <h4>{`${parseFloat(current).toLocaleString("en")}`}<div>$Meld</div></h4>
+                            <h4>{`${parseFloat(target).toLocaleString("en")}`}<div>$Meld</div></h4>
                         </ProgressRange>
                     </ProgressBarContainer>
                     <SaleInfo>
-                        <h1><span>{sale}$ Meld</span>sold</h1>
-                        <h3><span>{totalSale}$ Meld</span> sold totally</h3>
+                        <h1><span>{sale} $Meld</span> sold</h1>
+                        <h3><span>{totalSale} $Meld</span> sold totally</h3>
                         <Button>
-                            Create your referal!
+                            Create your referral
                         </Button>
                     </SaleInfo>
                 </MainInfo>
@@ -63,7 +63,8 @@ function Main({ currentPhaseNumber, accountAddress, unitCost, unit, current, tar
                         <Border>
                             <LabelContainer>
                                 <h4>Buy</h4>
-                                <p onClick={() => { setBuyAmount(parseFloat(max)) }}>max</p>
+                                <Button onClick={() => { setBuyAmount(parseFloat(max)) }}>max</Button>
+
                             </LabelContainer>
                             <InputContainer>
                                 <input type="number" value={buyAmount} placeholder="0.00" step={1} onChange={(e) => { setBuyAmount(e.target.value) }} /><h4>BNB</h4>
@@ -82,6 +83,7 @@ function Main({ currentPhaseNumber, accountAddress, unitCost, unit, current, tar
                     </TransactionContainer>
                     <CheckboxContainer>
                         <Checkbox onChange={handleCheckBox} /><p>Have a referal?</p>
+
                     </CheckboxContainer>
 
                     {referal && <input type="text" value={referalAddress} placeholder="0x0000..." onChange={(e => setReferalAddress(e.target.value))} />}
@@ -106,27 +108,35 @@ export default Main
 
 const MainContainer = styled.div`  
     width:100%;
-    
-    /* background: rgb(0,0,0); */
-    /* background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(9,9,121,1) 35%, rgba(214,0,81,1) 100%); */
     display:flex;
     flex-direction:column;
-    padding:40px 0;
+    padding:20px 0;
     align-items:center;
-    *{
-        /* \\ TODO:  correct this*/
-        margin:20px 0;
-    }
+   
+
     >Button{
-        background-color:black;
+        background-color:#48dca8;
         border-radius:50px;
         color:white;
-        *{
-            padding:2px;
-        }
-
+        padding:0;
+        border:1px solid #48dca8;
         :hover{
-            background-color:#3772ff;
+            background-color:white;
+            >h3{
+                color:black;
+            }
+            >.MuiSvgIcon-root{
+                background-color:#48dca8;
+            }
+        }
+        >.MuiSvgIcon-root{
+            border-radius:50px;
+            padding:15px;
+            font-size:24px;
+            border:1px solid #48dca8;
+        }
+        >h3{
+            padding:0 10px;
         }
     }
 `;
@@ -138,44 +148,130 @@ const MainInfoContainer = styled.div`
     align-items: center;
     justify-content:space-evenly;
     flex-wrap:wrap; 
-    *{
-        margin:20px 5px ;
-    }
 
+    margin:20px 0;
+    padding:10px 0;
 
 `;
 
 const MainInfo = styled.div`
     background-color:white;
-
-    /* color:white; */
-    border:2px solid black;
-    box-shadow: 0 0 10px rgba(0,0,0,.6);
+    box-shadow: 0 10px 10px rgba(0,0,0,.3);
     border-radius:50px;
-    padding:40px;
+    padding:20px 30px;
     >h1{
         text-align: center;
+        margin:10px auto;
+        margin-bottom:20px;
     >span{
-        color:#64dd17;
+        color:#00b638;
     }
     };
+    h2{
+        margin-bottom:10px;
+    }
     >h2>span{
         color:#548CFF;
     }
     
     >h3{
-        color:#548CFF;;
+        color:#00b638;;
     }
     @media (max-width:700px) {
         background-color:transparent;    
     }
 `;
 
+
+const ButtonContainer = styled.div`
+    display:flex;
+    justify-content: center;
+    
+    >Button{
+        color:white;
+        display:block;
+        justify-self: center;
+        padding:10px 50px;
+        font-weight:600;
+        background-color:#48dca8;
+        border-radius:25px;
+        :hover{
+            background-color:#548CFF;
+        } 
+    }
+`;
+
+const ProgressBarContainer = styled.div`
+    position:relative;
+    margin:30px auto;  
+`;
+
+const CompletedProgress = styled.div`
+    display:inline-block;
+    height:25px;
+    position:absolute;
+    z-index:999;
+    background-color:#48dca8;
+    border-radius:25px;
+    border:1px solid #48dca8;
+`;
+
+const TotalProgress = styled.div`
+    display:inline-block;
+    width:98%;
+    height:25px;
+    position:absolute;
+    z-index:99;
+    background-color:white;
+    border-radius:25px;
+    border:1px solid #48dca8;
+    `;
+
+const ProgressRange = styled.div`
+    display:flex;
+    justify-content:space-between;
+    margin-top: 40px;
+    text-align:left;
+    `;
+
+const SaleInfo = styled.div`
+    text-align:center;
+    *{
+        margin:20px 0;
+    }
+    >h1 >span{
+        color:#00b638;
+    }
+
+    >h3 >span{
+        color:#00b638;
+    }
+
+    >Button{
+        background-color:#48dca8;
+        color:white;
+        border-radius:25px;
+        padding:10px 20px;
+        font-weight:600;
+        :hover{
+            background-color:#548CFF;
+        }
+    }
+`;
+
+const SliderContainer = styled.div`
+    *{
+        margin:0;
+    }
+`;
+
 const MainTransactionContainer = styled.div`
-    background-color:#48DCA8;
-    color:white;
+    color:black;
+    /* border:2px solid  #0094FF; */
+    background-color:white;
+    box-shadow: 0 10px 10px rgba(0,0,0,.3);
     border-radius:50px;
-    padding:40px;
+    padding:35px;
     height:fit-content;
     *{
         margin:5px;
@@ -201,96 +297,27 @@ const MainTransactionContainer = styled.div`
 `;
 
 
-const ButtonContainer = styled.div`
-    display:flex;
-    justify-content: center;
-    >Button{
-        color:white;
-        display:block;
-        justify-self: center;
-        background-color:#ff4dab;
-        border-radius:25px;
-
-    }
-`;
-
-
-const ProgressBarContainer = styled.div`
-    position:relative;    
-`;
-
-const CompletedProgress = styled.div`
-    display:inline-block;
-    height:25px;
-    position:absolute;
-    z-index:999;
-    background-color:#548CFF;
-    border-radius:25px;
-    border:1px solid #548CFF;
-`;
-
-const TotalProgress = styled.div`
-    display:inline-block;
-    width:98%;
-    height:25px;
-    position:absolute;
-    z-index:99;
-    background-color:white;
-    border-radius:25px;
-    border:1px solid black;
-    `;
-
-
-const ProgressRange = styled.div`
-    display:flex;
-    justify-content:space-between;
-    margin-top: 20px;
-    `;
-
-const SaleInfo = styled.div`
-    text-align:center;
-
-    >h1 >span{
-        color:#64dd17;
-    }
-
-    >h3 >span{
-        color:#64dd17;
-    }
-
-    >Button{
-        background-color:#548CFF;
-        color:white;
-        border-radius:25px;
-        padding:10px;
-        
-        :hover{
-            background-color:#000;
-        }
-    }
-`;
-
-const SliderContainer = styled.div`
-    *{
-        margin:0;
-    }
-`;
-
 const TransactionContainer = styled.div``;
 
 const LabelContainer = styled.div`
     display:flex;
     align-items:center;
     justify-content: space-between;
-    font-size: 24px;;
-    p{
+    font-size: 24px;
+    
+    >Button{
         border-radius:25px;
         background-color:#2777f8;
-        padding:5px 10px;
-        padding-top:4px;
-        /* padding:5px; */
-        cursor: pointer;
+        cursor:pointer;
+        color:white;
+        font-size:16px !important;
+        font-weight:500;
+        text-transform: lowercase;
+        :hover{
+            background-color:#2777f8;
+        }
     }
+   
 `;
 const InputContainer = styled.div`
     display:flex;
@@ -304,7 +331,7 @@ const InputContainer = styled.div`
         border:none;
         font-size: 18px;
         padding:10px 25px;
-        background-color: whitesmoke;
+        background-color: #d9d9d9;
         border-radius: 25px;
     }
     >input::-webkit-outer-spin-button,
@@ -323,7 +350,7 @@ const CheckboxContainer = styled.div`
     align-items:center;
 `
 const Border = styled.div`
-    padding:20px;
-    border:2px solid white;
+    padding:10px;
+    border:2px solid #d9d9d9;
     border-radius:25px;
 `;

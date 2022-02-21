@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { logoIcoPad, simplex_logo } from "./assets.js"
+import { simplex_logo } from "./assets.js"
 
 function Header() {
     return (
@@ -8,7 +8,7 @@ function Header() {
             <HeaderLogoContainer>
                 <img src={simplex_logo} alt="Logo" />
             </HeaderLogoContainer>
-            <BottomLine />
+            {/* <BottomLine /> */}
         </HeaderContainer>
 
     )
@@ -31,7 +31,7 @@ const HeaderLogoContainer = styled.div`
     padding:30px 0;
     >img{
         object-fit:contain;
-        height:12vh;
+        height:6vh;
     }
     
 `;

@@ -39,10 +39,11 @@ function Footer() {
 export default Footer
 
 const FooterConainer = styled.div`
+    /* margin-top:100px; */
     display:flex;
     width:100%;
     flex-direction: column;
-    background-color: black;
+    background-color: #283445;
     justify-content:center;
     align-items: center;
     padding:20px;

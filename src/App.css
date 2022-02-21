@@ -1,3 +1,7 @@
+@font-face {
+  font-family: Poppins;
+  src: url("https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap");
+}
 * {
   margin: 0;
   overflow-x: hidden;
@@ -6,30 +10,6 @@
 
 body {
   width: 100vw;
-  background: whitesmoke;
-  /* background: radial-gradient(
-    circle,
-    rgba(255, 255, 255, 1) 55%,
-    rgba(0, 219, 118, 0.7682423311121324) 100%
-  );
-
-  @media (max-width: 700px) {
-    background: rgb(255, 255, 255);
-    background: -moz-radial-gradient(
-      circle,
-      rgba(255, 255, 255, 1) 95%,
-      rgba(0, 219, 118, 0.7682423311121324) 100%
-    );
-    background: -webkit-radial-gradient(
-      circle,
-      rgba(255, 255, 255, 1) 95%,
-      rgba(0, 219, 118, 0.7682423311121324) 100%
-    );
-    background: radial-gradient(
-      circle,
-      rgba(255, 255, 255, 1) 95%,
-      rgba(0, 219, 118, 0.7682423311121324) 100%
-    );
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#00db76",GradientType=1);
-  } */
+  background: white;
+  font-family: "Poppins", sans-serif;
 }
