@@ -120,6 +120,7 @@ const MainContainer = styled.div`
         color:white;
         padding:0;
         border:1px solid #48dca8;
+        transition:all 0s ;
         :hover{
             background-color:white;
             >h3{
