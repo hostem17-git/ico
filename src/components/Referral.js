@@ -37,35 +37,44 @@ function Referral({ accountAddress }) {
 export default Referral
 
 const ReferralContainer = styled.div`
-    border:2px solid black;
-    box-shadow:0 0 15px rgba(0,0,0,.6);
+
+    box-shadow:0 10px 10px rgba(0,0,0,.6);
     border-radius: 25px;
     padding:20px;
     display:flex;
     flex-direction: column;
     *{
         margin:0;
+        /* border:1px solid black; */
     }
 
     >Button{
         color:white;
-        background-color: Black;
+        background-color: #48dca8;
         border-radius:50px;
         align-self: center;
+        padding:2px 14px;
+        :hover{
+            background-color:#548CFF;
+        }
         :focus{
             background-color:blue;
         }
     }
-    
 `
 const UserShareContainer = styled.div`
     text-align:left;
+    margin-top:15px;
+    color: #00db76;
 `;
 const PartnerShareContainer = styled.div`
-    text-align:right;`;
+    text-align:right;
+    margin-bottom:15px;
+    color:#548CFF;
+`;
 
 const SliderInfo = styled.div`
-    margin: 25px 0;
+    margin: 20px 0;
     `;
 
 
@@ -75,7 +84,7 @@ const Slider = styled.div`
         opacity:.7;
         -webkit-transition: .2s;
         transition: opacity .2s;    
-        
+        margin:5px 0;
         :hover{
             opacity:1;
         }
