@@ -12,7 +12,7 @@ function Main({ currentPhaseNumber, accountAddress, unitCost, unit, current, tar
 
     const currencyOptions = {
         "bnb": bnb,
-        "mactic": matic,
+        "matic": matic,
         "usdt": usdt
     }
 
@@ -20,6 +20,8 @@ function Main({ currentPhaseNumber, accountAddress, unitCost, unit, current, tar
         "name": "",
         "img": ""
     });
+
+
     const [currencyOptionVisibility, setCurrencyOptionVisibility] = useState(false);
     const [buyAmount, setBuyAmount] = useState(0.00);
     const [smplxAmount, setSmplxAmount] = useState(0.00);
@@ -92,11 +94,13 @@ function Main({ currentPhaseNumber, accountAddress, unitCost, unit, current, tar
                                 <input type="number" value={buyAmount} placeholder="0.00" step={1} onChange={(e) => { setBuyAmount(e.target.value) }} />
                                 <DropDown>
                                     <Placeholder onClick={() => { setCurrencyOptionVisibility(true) }}>
-                                        {currency.name === "" ?
-                                            (<><p>Select Currency</p></>)
+                                        <KeyboardArrowDownIcon />{currency.name === "" ?
+                                            (<DropDownItem className='DropDownSelection'>
+                                                <img src={bnb} alt="bnb" /><p>BNB</p>
+                                            </DropDownItem>)
                                             : <DropDownItem className='DropDownSelection'>
                                                 <img src={currency.img} alt={currency.name} /> <p>{currency.name.toUpperCase()}</p>
-                                            </DropDownItem>}<KeyboardArrowDownIcon />
+                                            </DropDownItem>}
                                     </Placeholder>
                                     {currencyOptionVisibility && <DropDownOptions >
                                         {
@@ -153,7 +157,7 @@ const MainContainer = styled.div`
     flex-direction:column;
     padding:20px 0;
     align-items:center;
-   
+    justify-content: center;
 
     >Button{
         background-color:#48dca8;
@@ -375,6 +379,7 @@ const BuyInputContainer = styled.div`
     padding:1px 10px 1px 1px;
     >input{
         flex:.9;
+        margin-top:13px;
         /* color:#00db76; */
         outline:none;
         border:none;
@@ -400,6 +405,7 @@ const BuyInputContainer = styled.div`
     >p{
         margin-left: 2px;
     }
+    
 `;
 
 const SellInputContainer = styled.div`
