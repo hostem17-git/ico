@@ -1,8 +1,8 @@
 import { Button } from '@mui/material'
 import React from 'react'
 import styled from 'styled-components'
-import { bscscan, certik, coingecko, coinmarketcap, interfi } from "./assets"
-import ExternalLinkCollection from './ExternalLinkCollection'
+import { bscscan, simplex_logo_white, card1, card2, card3, card4, twitter } from "./assets"
+
 
 
 function Footer() {
@@ -17,20 +17,62 @@ function Footer() {
                 </svg>
             </FooterPattern>
 
-            <ExternalLinksContainer>
-                <ExternalLinkCollection title="Instruction" items={["1.Connect Your Wallet", "2.Insert the Amount", "3.Buy Meld"
-                ]} />
-                <ExternalLinkCollection title="Instruction" items={["1.Connect Your Wallet", "2.Insert the Amount", "3.Buy Meld"
-                ]} />
-                <ExternalLinkCollection title="Instruction" items={["1.Connect Your Wallet", "2.Insert the Amount", "3.Buy Meld"
-                ]} />
-                <ExternalLinkCollection title="Instruction" items={["1.Connect Your Wallet", "2.Insert the Amount", "3.Buy Meld"
-                ]} />
 
 
-            </ExternalLinksContainer>
+            <FooterItems>
+                <FooterSiteDesc>
+                    <img src={simplex_logo_white} alt="Simplex Logo" />
+                    <p>The World First Decentralized Blockchain Service Provider For Crypto Beginners, Next Generation Rewards Earning Platform & NFT MART</p>
+                    <Button> BUY NOW</Button>
+                </FooterSiteDesc>
 
-            <Logos>
+                <ExternalLinkListContainer>
+                    <h1>Company</h1>
+                    <ExternalLinkList>
+                        <h4>About</h4>
+                        <h4>Team</h4>
+                        <h4>Roadmap</h4>
+                        <h4>Whitepaper</h4>
+                        <h4>Contact</h4>
+                    </ExternalLinkList>
+                </ExternalLinkListContainer>
+
+                <ExternalLinkListContainer>
+                    <h1>Ecosystem</h1>
+                    <ExternalLinkList>
+                        <h4>Wallet</h4>
+                        <h4>Dapps</h4>
+                        <h4>Staking</h4>
+                        <h4>NFT Mart</h4>
+                        <h4>Launchpad</h4>
+                    </ExternalLinkList>
+                </ExternalLinkListContainer>
+
+                <PaymentAndMedia>
+
+                    <h3>Accepting Credit Cards soon</h3>
+                    <Payment>
+                        <img src={card1} alt="Card1" />
+                        <img src={card2} alt="Card2" />
+                        <img src={card3} alt="Card3" />
+                        <img src={card4} alt="Card4" />
+                    </Payment>
+
+                    <h3>Our Media :</h3>
+                    <MediaLine />
+                    <Media>
+                        <img src={twitter} alt="twitter" />
+                        <img src={twitter} alt="twitter" />
+                        <img src={twitter} alt="twitter" />
+                        <img src={twitter} alt="twitter" />
+                        <img src={twitter} alt="twitter" />
+                        <img src={twitter} alt="twitter" />
+                    </Media>
+                </PaymentAndMedia>
+
+            </FooterItems>
+
+            {/* <Logos>
                 <img src={bscscan} alt="BSC Logo" />
                 <img src={certik} alt="Certik Logo" />
                 <img src={coingecko} alt="CoinGecko Logo" />
@@ -40,7 +82,7 @@ function Footer() {
 
             <Button>
                 Support
-            </Button>
+            </Button> */}
 
 
             <FooterPattern className='bottomPattern'>
@@ -66,9 +108,8 @@ const FooterContainer = styled.div`
     width:100%;
     flex-direction: column;
     background-color: #283445;
-    justify-content:center;
+    /* justify-content:space-between; */
     align-items: center;
-    padding:20px auto;
     
     >Button{
         border-radius: 100px;
@@ -79,8 +120,117 @@ const FooterContainer = styled.div`
     >.bottomPattern{
         transform:rotate(180deg)
     }
-
+    
     `;
+
+const FooterItems = styled.div`
+    display:flex;
+    width:100%;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+    padding:25px 0;
+    /* border:1px solid red; */
+
+    /* *{
+        border:1px solid pink;
+    } */
+`;
+
+const FooterSiteDesc = styled.div`
+    flex:.4;
+    color:white;
+    display: inline-block;
+    
+    >p{
+        margin:20px 0;
+        font-size: 24px;
+        font-weight: 300;
+        text-align: left;
+    }
+    >img{
+        object-fit:contain;
+        height:35px;
+    }
+    
+    >Button{
+        background-color:#48dca8;
+        padding:5px 15px;
+        font-weight: 700;
+        font-size:20px;
+        color:white;
+        border-radius: 25px;
+    }
+`;
+
+const PaymentAndMedia = styled.div`
+    color:white;
+    >h3{
+        padding-top: 5px;
+        font-size: 28px;
+        font-weight: 400;
+    }
+
+`;
+
+const Payment = styled.div`
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    margin:25px 0;
+`;
+
+const MediaLine = styled.div`
+    display:inline-block;
+    width:40%;
+    margin: 10px 0;
+    border-bottom: 3px solid #04D169;
+`;
+
+
+const Media = styled.div`
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+
+    >img{
+        object-fit: contain;
+        height:40px;
+    }
+`;
+
+const FooterPattern = styled.div`
+    display:inline-block;
+    width:100%;
+    /* height:50px; */
+    >svg{
+        width:100%;
+        height: 50px;
+    }
+    >Path{
+        fill:#04D169;
+    }
+`;
+
+const ExternalLinkListContainer = styled.div`
+    color:white;
+    width:fit-content;
+    
+    >h1{
+        /* margin-bottom: 20px; */
+        font-size: 28px;
+        padding-top:5px;
+        margin-bottom:20px;
+    }
+`;
+
+const ExternalLinkList = styled.div`
+    >h4{
+        font-weight: 200;
+        margin:8px 0;
+        cursor: pointer;
+        font-size:18px;
+    }
+`;
 
 const Logos = styled.div`
     width:100%;
@@ -95,30 +245,9 @@ const Logos = styled.div`
     }
 `;
 
-const ExternalLinksContainer = styled.div`
-    display:flex;
-    flex-wrap: wrap;
-    justify-content:center;
-    padding:50px 0;
-`;
-
-const FooterPattern = styled.div`
-    display:inline-block;
-    width:100%;
-    /* height:50px; */
-    >svg{
-        width:100%;
-        height: 50px;
-    }
-    >Path{
-        fill:#04D169;
-    }
-`
-
 const Copyright = styled.div`
     display:inline-block;
     padding:20px 0;
     font-size:20px;
     color:white;
 `;
-

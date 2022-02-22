@@ -29,7 +29,7 @@ function Main({ currentPhaseNumber, accountAddress, unitCost, unit, current, tar
                 <h3>{(accountAddress === "") ? "Connect Wallet" : `${accountAddress}`}</h3>
             </Button>
 
-            <Referral accountAddress={accountAddress} />
+            {/* <Referral accountAddress={accountAddress} /> */}
             {/* ######################################################################################### */}
             <MainInfoContainer>
                 <MainInfo>

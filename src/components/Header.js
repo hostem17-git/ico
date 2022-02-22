@@ -1,12 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
-import { simplex_logo } from "./assets.js"
+import { simplex_ico_logo } from "./assets.js"
 
 function Header() {
     return (
         <HeaderContainer>
             <HeaderLogoContainer>
-                <img src={simplex_logo} alt="Logo" />
+                <img src={simplex_ico_logo} alt="Logo" />
             </HeaderLogoContainer>
             {/* <BottomLine /> */}
         </HeaderContainer>
