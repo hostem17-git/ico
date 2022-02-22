@@ -142,7 +142,7 @@ const FooterSiteDesc = styled.div`
     min-width:250px;
     >p{
         margin:20px 0;
-        font-size: 24px;
+        font-size: 20px;
         font-weight: 300;
         text-align: left;
     }
