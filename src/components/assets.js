@@ -17,8 +17,13 @@ import twitter from "../assets/images/twitter.png"
 import matic from "../assets/images/matic.png"
 import usdt from "../assets/images/usdt.png"
 import bnb from "../assets/images/twitter.png"
+import mail from "../assets/images/mail.png"
+import github from "../assets/images/github.png"
+import medium from "../assets/images/medium.png"
+import instagram from "../assets/images/instagram.png"
+import telegram from "../assets/images/telegram.png"
 
 
 
 
-export { logoIcoPad, bscscan, certik, coingecko, coinmarketcap, interfi, simplex_ico_logo, simplex_logo, card1, card2, card3, card4, twitter, simplex_logo_white, matic, usdt, bnb, simplex_logo_small };
+export { mail, github, medium, instagram, telegram, logoIcoPad, bscscan, certik, coingecko, coinmarketcap, interfi, simplex_ico_logo, simplex_logo, card1, card2, card3, card4, twitter, simplex_logo_white, matic, usdt, bnb, simplex_logo_small };

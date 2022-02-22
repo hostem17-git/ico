@@ -1,7 +1,7 @@
 import { Button } from '@mui/material'
 import React from 'react'
 import styled from 'styled-components'
-import { bscscan, simplex_logo_white, card1, card2, card3, card4, twitter } from "./assets"
+import { bscscan, simplex_logo_white, card1, card2, card3, card4, twitter, mail, github, medium, instagram, telegram } from "./assets"
 
 
 
@@ -61,12 +61,12 @@ function Footer() {
                     <h3>Our Media :</h3>
                     <MediaLine />
                     <Media>
-                        <img src={twitter} alt="twitter" />
-                        <img src={twitter} alt="twitter" />
-                        <img src={twitter} alt="twitter" />
-                        <img src={twitter} alt="twitter" />
-                        <img src={twitter} alt="twitter" />
-                        <img src={twitter} alt="twitter" />
+                        <img src={telegram} style={{ backgroundColor: "#29b6f6" }} alt="telegram" />
+                        <img src={twitter} style={{ backgroundColor: "#1d9bf0" }} alt="twitter" />
+                        <img src={instagram} style={{ backgroundColor: "#FFF" }} alt="instagram" />
+                        <img src={medium} style={{ backgroundColor: "#000" }} alt="Medium" />
+                        <img src={github} style={{ backgroundColor: "#404040" }} alt="github" />
+                        <img src={mail} style={{ backgroundColor: "#fa314a" }} alt="twitter" />
                     </Media>
                 </PaymentAndMedia>
 
@@ -194,10 +194,12 @@ const Media = styled.div`
     display:flex;
     align-items:center;
     justify-content: space-between;
-
+    
     >img{
         object-fit: contain;
-        height:40px;
+        height:30px;
+        padding:5px;
+        border-radius: 5px;
     }
 `;
 
