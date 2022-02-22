@@ -36,14 +36,14 @@ const HeaderLogoContainer = styled.div`
     
 `;
 
-const BottomLine = styled.div`
-    display:block;
-    border-bottom: 2px solid black;
-    /* box-shadow: 0 2px 3px rgba(0,0,0); */
-    width:70%;
-    margin-bottom: 10px;
-    @media (max-width:400px) {
-        width:100%;
-    }
+// const BottomLine = styled.div`
+//     display:block;
+//     border-bottom: 2px solid black;
+//     /* box-shadow: 0 2px 3px rgba(0,0,0); */
+//     width:70%;
+//     margin-bottom: 10px;
+//     @media (max-width:400px) {
+//         width:100%;
+//     }
     
-`;
+// `;

@@ -7,6 +7,7 @@ import interfi from "../assets/images/interfi2.png"
 import simplex_ico_logo from "../assets/images/simplex_ICO PAD.png"
 import simplex_logo from "../assets/images/simplex_logo.png"
 import simplex_logo_white from "../assets/images/simplex_logo_white.png"
+import simplex_logo_small from "../assets/images/simplex_logo_small.png"
 
 import card1 from "../assets/images/Card1.png"
 import card2 from "../assets/images/Card2.png"
@@ -20,4 +21,4 @@ import bnb from "../assets/images/twitter.png"
 
 
 
-export { logoIcoPad, bscscan, certik, coingecko, coinmarketcap, interfi, simplex_ico_logo, simplex_logo, card1, card2, card3, card4, twitter, simplex_logo_white, matic, usdt, bnb };
+export { logoIcoPad, bscscan, certik, coingecko, coinmarketcap, interfi, simplex_ico_logo, simplex_logo, card1, card2, card3, card4, twitter, simplex_logo_white, matic, usdt, bnb, simplex_logo_small };

@@ -129,18 +129,17 @@ const FooterItems = styled.div`
     flex-wrap: wrap;
     justify-content:space-evenly;
     padding:25px 0;
-    /* border:1px solid red; */
-
-    /* *{
-        border:1px solid pink;
-    } */
+    /* border:1px solid red; */ 
+    *{
+        margin:5px 5px;
+    }
 `;
 
 const FooterSiteDesc = styled.div`
     flex:.4;
     color:white;
     display: inline-block;
-    
+    min-width:250px;
     >p{
         margin:20px 0;
         font-size: 24px;
@@ -159,6 +158,10 @@ const FooterSiteDesc = styled.div`
         font-size:20px;
         color:white;
         border-radius: 25px;
+    }
+
+    @media (max-width:300px){
+        text-align: center;;
     }
 `;
 
@@ -250,4 +253,5 @@ const Copyright = styled.div`
     padding:20px 0;
     font-size:20px;
     color:white;
+    text-align: center;
 `;

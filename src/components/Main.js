@@ -2,18 +2,19 @@ import React, { useEffect, useState } from 'react'
 import styled from 'styled-components';
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
 import { Button, Checkbox } from '@mui/material';
+import { simplex_logo_small } from './assets';
 import Referral from './Referral';
 
 
 function Main({ currentPhaseNumber, accountAddress, unitCost, unit, current, target, sale, totalSale, max }) {
 
     const [buyAmount, setBuyAmount] = useState(0.00);
-    const [meldAmount, setMeldAmount] = useState(0.00);
+    const [smplxAmount, setSmplxAmount] = useState(0.00);
     const [referal, setReferal] = useState(false);
     const [referalAddress, setReferalAddress] = useState("")
 
     useEffect(() => {
-        setMeldAmount((parseFloat(unit) * parseFloat(buyAmount)) / (parseFloat(unitCost)))
+        setSmplxAmount((parseFloat(unit) * parseFloat(buyAmount)) / (parseFloat(unitCost)))
     }, [buyAmount, unit, unitCost])
 
     const handleCheckBox = (e) => {
@@ -34,7 +35,7 @@ function Main({ currentPhaseNumber, accountAddress, unitCost, unit, current, tar
             <MainInfoContainer>
                 <MainInfo>
                     <h1>Launchpad <span>Phase {currentPhaseNumber}/5</span> is Live</h1>
-                    <h2>Price of <span>{unitCost}BNB</span> per <span>{unit} Meld</span></h2>
+                    <h2>Price of <span>{unitCost}BNB</span> per <span>{unit} $SMPLX</span></h2>
                     <h3>{currentPhaseNumber - 1} phases completed</h3>
 
                     <ProgressBarContainer>
@@ -44,13 +45,13 @@ function Main({ currentPhaseNumber, accountAddress, unitCost, unit, current, tar
                         </SliderContainer>
 
                         <ProgressRange>
-                            <h4>{`${parseFloat(current).toLocaleString("en")}`}<div>$Meld</div></h4>
-                            <h4>{`${parseFloat(target).toLocaleString("en")}`}<div>$Meld</div></h4>
+                            <h4>{`${parseFloat(current).toLocaleString("en")}`}<div>$SMPLX</div></h4>
+                            <h4>{`${parseFloat(target).toLocaleString("en")}`}<div>$SMPLX</div></h4>
                         </ProgressRange>
                     </ProgressBarContainer>
                     <SaleInfo>
-                        <h1><span>{sale} $Meld</span> sold</h1>
-                        <h3><span>{totalSale} $Meld</span> sold totally</h3>
+                        <h1><span>{sale} $SMPLX</span> sold</h1>
+                        <h3><span>{totalSale} $SMPLX</span> sold totally</h3>
                         <Button>
                             Create your referral
                         </Button>
@@ -73,11 +74,10 @@ function Main({ currentPhaseNumber, accountAddress, unitCost, unit, current, tar
                         <Border>
                             <LabelContainer>
                                 <h4>Get</h4>
-
                             </LabelContainer>
                             <InputContainer>
-                                <input type="number" disabled value={meldAmount} placeholder="0.00" />
-                                <h4>MELD</h4>
+                                <input type="number" disabled value={smplxAmount} placeholder="0.00" />
+                                <img src={simplex_logo_small} alt="Smplx logo " /><p>SIMPLEX</p>
                             </InputContainer>
                         </Border>
                     </TransactionContainer>
@@ -91,7 +91,7 @@ function Main({ currentPhaseNumber, accountAddress, unitCost, unit, current, tar
 
                     <ButtonContainer>
                         <Button>
-                            Buy $MELD
+                            Buy $SMPLX
                         </Button>
                     </ButtonContainer>
 
@@ -323,11 +323,15 @@ const LabelContainer = styled.div`
     }
    
 `;
+
+
 const InputContainer = styled.div`
     display:flex;
     align-items:center;
     justify-content: space-between;
-    
+    background-color:#eef2f2;
+    border-radius: 5px;
+    padding:1px 5px 1px 1px;
     >input{
         flex:.9;
         /* color:#00db76; */
@@ -335,8 +339,8 @@ const InputContainer = styled.div`
         border:none;
         font-size: 18px;
         padding:10px 25px;
-        background-color: #d9d9d9;
-        border-radius: 25px;
+        background-color: #f9f9f9;
+        border-radius: 5px;
     }
     >input::-webkit-outer-spin-button,
     >input::-webkit-inner-spin-button {
@@ -346,7 +350,15 @@ const InputContainer = styled.div`
     >h4{
         font-size: 20px;
     }
-      
+    
+    >img{
+        object-fit:contain;
+        height:25px;
+        margin-right:2px;
+    }
+    >p{
+        margin-left: 2px;
+    }
 `;
 
 const CheckboxContainer = styled.div`
