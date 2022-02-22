@@ -200,6 +200,7 @@ const Media = styled.div`
         height:30px;
         padding:5px;
         border-radius: 5px;
+        cursor:pointer;
     }
 `;
 
