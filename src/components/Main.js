@@ -7,7 +7,7 @@ import Referral from './Referral';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 // import { Dropdown } from 'semantic-ui-react'
 
-function Main({ currentPhaseNumber, accountAddress, unitCost, unit, current, target, sale, totalSale, max }) {
+function Main({ currentPhaseNumber, accountAddress, unitCost, unit, current, target, sale, totalSale, max, setCurrent }) {
 
 
     const currencyOptions = {
@@ -40,6 +40,7 @@ function Main({ currentPhaseNumber, accountAddress, unitCost, unit, current, tar
         setSmplxAmount((parseFloat(unit) * parseFloat(buyAmount)) / (parseFloat(unitCost)))
     }, [buyAmount, unit, unitCost])
 
+
     const handleCheckBox = (e) => {
         setReferal(e.target.checked);
     }
@@ -48,7 +49,7 @@ function Main({ currentPhaseNumber, accountAddress, unitCost, unit, current, tar
         <MainContainer>
 
 
-            <Button onClick={() => { console.log(currency) }}>
+            <Button onClick={() => { setCurrent(10000) }}>
                 <AccountBalanceWalletIcon />
                 <h3>{(accountAddress === "") ? "Connect Wallet" : `${accountAddress}`}</h3>
             </Button>
@@ -94,13 +95,13 @@ function Main({ currentPhaseNumber, accountAddress, unitCost, unit, current, tar
                                 <input type="number" value={buyAmount} placeholder="0.00" step={1} onChange={(e) => { setBuyAmount(e.target.value) }} />
                                 <DropDown>
                                     <Placeholder onClick={() => { setCurrencyOptionVisibility(true) }}>
-                                        <KeyboardArrowDownIcon />{currency.name === "" ?
+                                        {currency.name === "" ?
                                             (<DropDownItem className='DropDownSelection'>
                                                 <img src={bnb} alt="bnb" /><p>BNB</p>
                                             </DropDownItem>)
                                             : <DropDownItem className='DropDownSelection'>
                                                 <img src={currency.img} alt={currency.name} /> <p>{currency.name.toUpperCase()}</p>
-                                            </DropDownItem>}
+                                            </DropDownItem>}<KeyboardArrowDownIcon />
                                     </Placeholder>
                                     {currencyOptionVisibility && <DropDownOptions >
                                         {
@@ -127,7 +128,7 @@ function Main({ currentPhaseNumber, accountAddress, unitCost, unit, current, tar
                         </Border>
                     </TransactionContainer>
                     <CheckboxContainer>
-                        <Checkbox onChange={handleCheckBox} /><p>Have a referal?</p>
+                        <Checkbox onChange={handleCheckBox} /><p>Have a referral?</p>
 
                     </CheckboxContainer>
 
@@ -182,11 +183,10 @@ const MainContainer = styled.div`
             border:1px solid #48dca8;
         }
         >h3{
-            padding:0 10px;
+            padding:0 5px;
         }
     }
 `;
-
 
 const MainInfoContainer = styled.div`
     width:100%;
@@ -227,7 +227,6 @@ const MainInfo = styled.div`
         background-color:transparent;    
     }
 `;
-
 
 const ButtonContainer = styled.div`
     display:flex;
@@ -331,6 +330,7 @@ const MainTransactionContainer = styled.div`
         padding:10px 25px;
         background-color: whitesmoke;
         border-radius: 25px;
+        transition:all 1s linear;
         
     }
 
@@ -344,7 +344,6 @@ const MainTransactionContainer = styled.div`
      }
     
 `;
-
 
 const TransactionContainer = styled.div``;
 
@@ -369,7 +368,6 @@ const LabelContainer = styled.div`
    
 `;
 
-
 const BuyInputContainer = styled.div`
     display:flex;
     align-items:flex-start;
@@ -379,7 +377,7 @@ const BuyInputContainer = styled.div`
     padding:1px 10px 1px 1px;
     >input{
         flex:.9;
-        margin-top:13px;
+        /* margin-top:13px; */
         /* color:#00db76; */
         outline:none;
         border:none;
@@ -457,10 +455,13 @@ const Border = styled.div`
 
 const DropDown = styled.div`
     display:flex;
+    /* flex:0.2; */
     align-items: center;
     position:relative;
     overflow:visible;
-    flex-direction: column;;
+    flex-direction: column;
+    margin:8px 0;
+    
 `
 const DropDownOptions = styled.div`
     /* position:absolute; */
@@ -476,11 +477,15 @@ const DropDownItem = styled.div`
     align-items:center;
     >img{
         object-fit:contain;
-        width:30px;
+        height:25px;
+        margin-right: 2px;
     }
     :hover{
         background-color: white;
         cursor: pointer;
+    }
+    >p{
+        margin-left: 2px;;
     }
     
 `;
@@ -489,6 +494,10 @@ const Placeholder = styled.div`
     display:flex;
     align-items: center;
     cursor:pointer;
+
+    *{
+        margin:0 2px;
+    }
     >.DropDownSelection{
         :hover{
             background-color:transparent;
